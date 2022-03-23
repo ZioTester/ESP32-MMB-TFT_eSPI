@@ -23,6 +23,9 @@ TFT_eSPI tft = TFT_eSPI();       // Invoke custom library
 void setup(void) {
   tft.init();
   tft.setRotation(MMB_ROTATION);
+  ledcAttachPin(TFT_BL, 1);      // assign TFT_BL pin to channel 1
+  ledcSetup(1, 12000, 8);        // 12 kHz PWM, 8-bit resolution
+  ledcWrite(1, TFT_BRIGHTNESS);  // brightness 0 - 255
 }
 
 void loop() {  
@@ -36,19 +39,23 @@ void loop() {
   tft.setCursor(0, 0, 2);
   
   // Set the font colour to be white with a black background, set text size multiplier to 2
-  tft.setTextColor(TFT_BLACK, TFT_WHITE);  
+  tft.setTextColor(TFT_WHITE, TFT_BLACK);  
+  // Change to font 2
+  tft.setTextFont(2);
   tft.setTextSize(2);
   // We can now plot text on screen using the "print" class
   tft.println("platformio.ini");  
 
   tft.setTextSize(1);
-  // Set the font colour to be red with black background, set to font 4
-  tft.setTextColor(TFT_RED,TFT_BLACK);    
+
+  // Change to font 4
   tft.setTextFont(4);
+  // Set the font colour to be red with black background
+  tft.setTextColor(TFT_RED,TFT_BLACK);    
   tft.println("multi-env example");
   tft.println("by ZioTester Lab.");
 
-  // Set the font colour to be green with black background, set to font 4
+  // Set the font colour to be green with black background
   tft.setTextColor(TFT_GREEN,TFT_BLACK);
   // Change to font 2
   tft.setTextFont(2);
