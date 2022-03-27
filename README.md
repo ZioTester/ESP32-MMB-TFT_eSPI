@@ -4,4 +4,4 @@ Example projects for **ESP32-DevKitC-Multimedia-Board**  and **TFT_eSPI** by **Z
 
 Info, guides, tutorials and documentation: [HERE](http://ziotester.github.io/hardware/mmb)
 
-![](img/kit.jpg)
+![](kit.jpg)
