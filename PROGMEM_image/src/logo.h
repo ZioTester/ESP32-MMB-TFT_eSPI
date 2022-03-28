@@ -2,16 +2,6 @@
 // Images can be converted to XBM format by using the online converter here:
 // https://www.online-utility.org/image/convert/to/XBM
 
-// The output must be pasted in a header file, renamed and adjusted to appear
-// as as a const unsigned char array in PROGMEM (FLASH program memory).
-
-// The xbm format adds padding to pixel rows so they are a whole number of bytes
-// In this example 50 pixel width means 56 bits = 7 bytes
-// the 50 height then means array uses 50 x 7 = 350 bytes of FLASH
-// The library ignores the padding bits when drawing the image on the display.
-
-// Example of the correct format is shown below
-
 // logo 64x64 pixel array in XBM format
 #define logoWidth  64  // logo width
 #define logoHeight 64  // logo height

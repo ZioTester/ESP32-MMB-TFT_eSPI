@@ -5,8 +5,12 @@
 			"path": "hello_world"
 		},
 		{
-			"name": "flash_memory_image",
-			"path": "flash_memory_image"
+			"name": "PROGMEM_image",
+			"path": "PROGMEM_image"
+		},
+		{
+			"name": "SPIFFS-images",
+			"path": "SPIFFS-images"
 		}
 	]
 }
